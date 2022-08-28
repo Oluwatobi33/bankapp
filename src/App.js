@@ -17,30 +17,30 @@ import Error from './component/Error';
 function App() {
   return (
     <>
-     <NavBar/>
+     {/* <NavBar/>
     <Background/>
     <Every/>
        <Shop/>
        <Every/>
-       <Download/>
+       <Download/> */}
        
-       <ExistingCust/>
+       {/* <ExistingCust/> */}
        {/* <UserInterface/> */}
-       <Product/>
+       {/* <Product/>
        <FootPrint/>
         <Every/>
-         <Footer/> 
+         <Footer/>  */}
         {/* <Error/>   */}
       <Routes>
         {/* <Route path='/' element={<Ho />} /> */}
-         {/* <Route path='/navbar' element={<NavBar />}></Route>
+         <Route path='/navbar' element={<NavBar />}></Route>
         <Route path='/Background' element={<Background/>}></Route>
         <Route path='/shop' element={<Shop />}></Route>
         <Route path='/download' element={<Download />}></Route>
         <Route path='/existingCust' element={<ExistingCust />}></Route>
         <Route path='/footPrint' element={<FootPrint />}></Route>
         <Route path='/footer' element={<Footer />}></Route>
-        <Route path='/signup' element={<Signup />} /> */}
+        <Route path='/signup' element={<Signup />} />
         <Route path='/signin' element={<Signin />} />
         {/* <Route path='/userinterface' element={<UserInterface />} />  */}
         <Route path='/Error' element={<Error />} />

@@ -13,15 +13,28 @@
   }
 }
 .nav-link {
-  display: block;
-  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: var(--bs-nav-link-font-size);
-  font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
-  text-decoration: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-  font-size: 12px !important;
+  color: #353f50;
+font-size: 14px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+text-decoration: none;
+padding-top: 17px;
+font-size: 12px !important;
+transition:  2s !important;
 }
+.nav-link:hover {
+  color: #353f50;
+font-size: 14px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+text-decoration: none;
+padding-top: 17px;
+font-size: 12px !important;
+transform: scale(1.5) !important;
+}
+
 .navbar {
   padding: 2px 0px !important;
 }
@@ -189,7 +202,7 @@ body {
     transform: rotate(360deg);
   }
 }
-input[type=text]{
+/* input[type=text]{
  width: 100%;
  padding: 12px 20px;
  margin: 8px 0px;
@@ -197,14 +210,44 @@ input[type=text]{
  border: none;
  border-bottom: 2px solid black;
 }
-input[type=text]:focus{
+/* input[type=text]:focus{
   width: 100%;
   /* padding: 12px 20px; */
   /* margin: 8px 0px; */
   /* box-sizing: border-box; */
-  border: none;
-  border-bottom: 2px solid black
+  /* border: none; */
+  /* border-bottom: 2px solid black */
+.btn-success {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #198754;
+  --bs-btn-border-color: #198754;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #157347;
+  --bs-btn-hover-border-color: #146c43;
+  --bs-btn-focus-shadow-rgb: 60,153,110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #146c43;
+  --bs-btn-active-border-color: #13653f;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #198754;
+  --bs-btn-disabled-border-color: #198754;
+  padding: 5px 25px !important;
+}
+  .inp {
+    border:none;
+    border-bottom: 1px solid black;
+    padding: 5px 20px;
+    outline: none;
  }
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease; 
+    text-indent: -100%;
+    opacity: 1;
+ }
+
+
 .day h3{
   color: #18425d;
     font-style: normal;

@@ -6,7 +6,7 @@ const NavBar = () => {
     <>
       <nav class="navbar navbar-expand-lg bg-white ">
         <div class="container-fluid">
-          <a class="navbar-brand ms-5" href="#">
+          <a class="navbar-brand" style={{marginLeft:"11vw"}} href="#">
             <img src="https://www.interswitchgroup.com/assets/images/home/interswitch_logo.svg" style={{width:'100px'}} className='img-responsive img-fluid' />
           </a>
           <button
@@ -21,7 +21,7 @@ const NavBar = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-4 ">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">
                   About
@@ -51,7 +51,8 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
-      <nav class="navbar py-3" style={{ backgroundColor: '#18425d', height:"8vh",}}>
+      <div className="container-fluid" style={{ backgroundColor: '#18425d', height:"8vh",}} >
+      <nav class="navbar py-3"   style={{marginLeft:"11vw"}}>
         <div class="container-fluid">
           <span class="navbar-text">
           <h6 className="text-white">Quickteller</h6>
@@ -59,6 +60,7 @@ const NavBar = () => {
           <span><p className="text-white">Interested? <span className="fw-bold">Get Started</span></p></span>
         </div>
       </nav>
+      </div>
     </>
   );
 };
