@@ -9,28 +9,28 @@ import ExistingCust from './component/ExistingCust';
 import FootPrint from './component/FootPrint';
 import Footer from './component/Footer';
 import Signup from './component/Signup';
-import UserInterface from './component/UserInterface';
 import Signin from './component/Signin';
 import Product from './component/Product';
 import Background from './component/Background';
 import Error from './component/Error';
+import Dashboard from './component/Dashboard';
 function App() {
   return (
     <>
-     {/* <NavBar/>
-    <Background/>
+  {/* <NavBar/> */}
+    {/* <Background/>
     <Every/>
        <Shop/>
        <Every/>
-       <Download/> */}
+       <Download/>
        
-       {/* <ExistingCust/> */}
-       {/* <UserInterface/> */}
-       {/* <Product/>
+       <ExistingCust/> 
+       
+       <Product/>
        <FootPrint/>
-        <Every/>
-         <Footer/>  */}
-        {/* <Error/>   */}
+         <Footer/>   */}
+       {/* <Error/>   */}
+       {/* <UserInterface/>  */}
       <Routes>
         {/* <Route path='/' element={<Ho />} /> */}
          <Route path='/navbar' element={<NavBar />}></Route>
@@ -42,7 +42,9 @@ function App() {
         <Route path='/footer' element={<Footer />}></Route>
         <Route path='/signup' element={<Signup />} />
         <Route path='/signin' element={<Signin />} />
-        {/* <Route path='/userinterface' element={<UserInterface />} />  */}
+        <Route path='/Every' element={<Every/>} />
+        <Route path='/Dashboard' element={<Dashboard />} /> 
+        <Route path='/product' element={<Product/>} /> 
         <Route path='/Error' element={<Error />} />
       </Routes>
     </>

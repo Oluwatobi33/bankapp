@@ -1,9 +1,10 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import register from "../assest/image/register.webp"
 const Signup = () => {
+    const Navigate = useNavigate()
     const [fullname, setfullname] = useState("")
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
@@ -23,7 +24,7 @@ const Signup = () => {
             setallUsers(() => {
                 let applicant = [...allUsers, User]
                 localStorage.tobi = JSON.stringify(applicant)
-                // Navigate('/')
+                Navigate('/Signin')
                 return applicant
             })
         }
@@ -31,46 +32,48 @@ const Signup = () => {
     return (
         <><NavBar />
             <div className="container">
-                <div className="row ">
-                    {/* <div className="col-md-12"> */}
-                    <div className="col-md-6 ">
-                        <h1 className=" fw-bold text-center text-uppercase text-dark mt-4 ">Registration page</h1>
-                        <div className="row justify-content-center mt-5 ">
-                            <div className="row">
-                                <div className="col-md-6 my-3">
-                                    <input type="text" className=" inp" placeholder="FullNmae" onChange={(e) => setfullname(e.target.value)} />
-                                    <div className="dd">
-                                        <small id="err1" className=""></small>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 my-3">
-                                    <input type="text" className="inp" placeholder="Email" onChange={(e) => setemail(e.target.value)} />
-                                    <div className="dd">
-                                        <small id="err4" className=""></small>
-                                    </div>
-                                </div>
+                <div className="row py-5">
+                    <div className="col-6">
+                        <div className="row">
+                            <div className="text-center">
+                                <img src="https://www.interswitchgroup.com/assets/images/home/interswitch_logo.svg" style={{ width: '100px', marginBottom: "11px" }} className='img-responsive img-fluid' />
+                                <h4>Create an account</h4>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-6 ">
-                                <input type="text" className="inp" placeholder="Password" onChange={(e) => setpassword(e.target.value)} />
+                            <div className="col-md-6 my-3">
+                                <input type="text" className="col-md-6 inp" placeholder="FullName" onChange={(e) => setfullname(e.target.value)} />
                                 <div className="dd">
-                                    <small id="err5" className=""></small>
+                                    <small id="err1" className=""></small>
                                 </div>
                             </div>
-                            <div className="col-md-6">
-                                <input type="text" className="inp" placeholder="PhoneNumber" onChange={(e) => setphoneNumber(e.target.value)} />
+                            <div className="col-md-6 my-3">
+                                <input type="text" className="inp" placeholder="Email" onChange={(e) => setemail(e.target.value)} />
                                 <div className="dd">
-                                    <small id="err6" className=""></small>
+                                    <small id="err4" className=""></small>
                                 </div>
                             </div>
+                            <div className="row">
+                                <div className="col-md-6 ">
+                                    <input type="text" className="inp" placeholder="Password" onChange={(e) => setpassword(e.target.value)} />
+                                    <div className="dd">
+                                        <small id="err5" className=""></small>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <input type="text" className="inp" placeholder="PhoneNumber" onChange={(e) => setphoneNumber(e.target.value)} />
+                                    <div className="dd">
+                                        <small id="err6" className=""></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <center>
+                                <button className="btn btn-success mt-4" onClick={submit}>signup</button>
+                            </center>
                         </div>
-                        <center className='mt-4'>
-                            <button type="submit" className="btn btn-lg btn-success" style={{ fontSize: "15px" }} onClick={submit} >SignUp</button>
-                        </center>
                     </div>
-                    <div classNameName="col-md-6">
-                        <img src={register} className='img-responsive img-fluid w-50' />
+                    <div className="col-6">
+                        <img src={register} className='img-responsive img-fluid w-100' />
                     </div>
                 </div>
             </div>
