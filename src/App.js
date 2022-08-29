@@ -17,22 +17,19 @@ import Dashboard from './component/Dashboard';
 function App() {
   return (
     <>
-  {/* <NavBar/> */}
-    {/* <Background/>
-    <Every/>
+  <NavBar/> 
+     <Background/>
+      <Every/>
        <Shop/>
-       <Every/>
        <Download/>
-       
        <ExistingCust/> 
-       
        <Product/>
        <FootPrint/>
-         <Footer/>   */}
-       {/* <Error/>   */}
-       {/* <UserInterface/>  */}
+         <Footer/>  
+        {/* <Error/>   */}
+      
       <Routes>
-        {/* <Route path='/' element={<Ho />} /> */}
+      
          <Route path='/navbar' element={<NavBar />}></Route>
         <Route path='/Background' element={<Background/>}></Route>
         <Route path='/shop' element={<Shop />}></Route>

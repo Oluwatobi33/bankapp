@@ -1,5 +1,5 @@
 import React from 'react'
-import check from '../assets/vendor/icofont/icofont.min.css'
+// import check from '../assets/vendor/icofont/icofont.min.css'
 const ExistingCust = () => {
     return (
         <>

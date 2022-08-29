@@ -148,22 +148,25 @@
   color: #18425d;
 }
 
-.about1 {
+.pay{
   color: #00425f;
-  font-size: 10px !important;
+  font-size: 14px;
 
+}
+.btn-md {
+  padding: 2px 13px !important;
 }
 
 .about {
   padding-bottom: 0.625rem;
   color: #00425f;
-  font-size: 10px !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
   text-transform: uppercase;
   text-align: center;
 }
 
-li {
+.list  li {
   list-style-type: none;
   color: #353f50;
   font-weight: 400 !important;
@@ -321,7 +324,7 @@ body {
 .bill h3 {
   padding-top: 10px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 19px;
   line-height: 28px;
   color: #353f50;
 }
@@ -337,7 +340,7 @@ body {
 .flight h3 {
   padding-top: 10px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 19px;
   line-height: 28px;
   color: #353f50;
 }
@@ -345,7 +348,7 @@ body {
 .ticket h3 {
   padding-top: 10px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 19px;
   line-height: 28px;
   color: #353f50;
 }
@@ -361,7 +364,7 @@ body {
 .global h3 {
   padding-top: 10px;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 28px;
   color: #353f50;
 }
@@ -389,17 +392,16 @@ body {
   line-height: 24px;
 }
 
-.list {
-  list-style-type: none;
-}
+
 
 .list li {
   line-height: 1.2em;
-  color: #353f50;
+  color: gray;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 24px;
+  list-style-type: none !important;
 }
 
 .section4 {
@@ -424,11 +426,11 @@ body {
   line-height: 24px;
 }
 
-@media screen and (min-width:480px) and (max-width:520px) {
+@media screen and (min-width:480px) {
 
   .about1 {
     color: #00425f;
-    font-size: 17px !important;
+    font-size: 14px !important;
     text-align: center;
 
   }
@@ -436,19 +438,30 @@ body {
   .about {
     padding-bottom: 0.625rem;
     color: #00425f;
-    font-size: 17px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     text-transform: uppercase;
 
   }
 
-  li {
+  /* li {
     list-style-type: none;
     color: #353f50;
     font-weight: 400 !important;
     line-height: 29px;
-    font-size: 11px;
+    font-size: 19px;
     text-align: justify;
+  } */
+
+  .circle1 {
+    background: #fff;
+    box-shadow: 0 4px 24px rgb(0 0 0 / 14%);
+    border-radius: 16px;
+    height: 60vh;
+    margin: 0 0 30px;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 10px;
   }
 
 }
