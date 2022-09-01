@@ -42,7 +42,7 @@ const Shop = () => {
                             </div>
                             <div className="col-md-6 mb-5 text-center">
                                 <div className='global'>
-                                    <img src='https://www.interswitchgroup.com/assets/images/consumer/online-shopping-1.svg text-center' className='img-responsive img-fluid w-49' />
+                                    <img src='https://www.interswitchgroup.com/assets/images/consumer/online-shopping-1.svg' className='img-responsive img-fluid w-49' />
                                     <h3 className='text-md-start'>Global online shopping</h3>
                                     <p className='text-md-start'>Shop directly from over 100 leading US/UK stores, pay in Naira and enjoy doorstep delivery to your Nigerian address.</p>
                                 </div>
@@ -51,7 +51,7 @@ const Shop = () => {
                     </div>
                     <div className="col-lg-6 col-md-6">
                         <div className=''>
-                            <img src={quick} className='img-responsive img-fluid finegirl' style={{ height: '70vh',width:"80vw" }} />
+                            <img src={quick} className='img-responsive img-fluid finegirl' style={{ height: '80vh',width:"80vw" }} />
                         </div>
                     </div>
                 </div>

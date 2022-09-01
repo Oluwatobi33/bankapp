@@ -38,7 +38,7 @@
 }
 
 .navbar {
-  padding: 2px 0px !important;
+  padding: 6px 0px !important;
 }
 
 .btn-md {
@@ -117,7 +117,9 @@
 .rand {
   padding: 12px;
   border-radius: 100%;
-  background-color: rgba(240,243,247,.03);
+  /* background-color: rgba(240,243,247,.03); */
+
+  color: white;
 }
 
 .section5 {
@@ -273,7 +275,7 @@ body {
 .inp {
   border: none;
   border-bottom: 1px solid black;
-  padding: 5px 20px;
+  padding: 5px 25px;
   outline: none;
 }
 
@@ -391,8 +393,19 @@ body {
   font-size: 15px;
   line-height: 24px;
 }
-
-
+/* .{
+  box-shadow: 0 4px 24px rgb(0 0 0 / 14%);
+} */
+.wrapper{
+  background: #fff;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 14%);
+  border-radius: 16px;
+  height: 30vh;
+  margin: 0 0 30px;
+  width: 90vh;
+  max-width: 100%;
+  padding: 12px 10px;
+}
 
 .list li {
   line-height: 1.2em;
@@ -452,14 +465,81 @@ body {
     font-size: 19px;
     text-align: justify;
   } */
+.section7 {
+  background-color:  #00425f;
+  background-size: cover;
+  height: 39vh;
+  width: 100vw;
+}
+.wrapper h6 {
+  color: #00425f;
+}
+.wrapper p {
+  color: #00425f;
+}
+.totalPrice {
+  border: 1px solid black;
+  width: 100vw;
+  height: 29vh;
+  margin-top: 23px;
+}
+.service li {
+  display: inline-block;
 
-  .circle1 {
+}
+.btn-warning {
+  padding: 12px 23px !important;
+}
+.ele {
+  padding: 10px;
+  background-color: rgb(57, 57, 19);
+  border-radius: 9px;
+  /* margin-right: 23px; */
+}
+.section11 {
+  background-image: url(./assest/image/more.jpg);
+  height: 55vh;
+  width: 100vw !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sp {
+  padding: 19px 33px;
+  background-color:var(--bs-btn-active-border-color);
+  border-radius: 9px;
+}
+.btn-success {
+  padding: 12px 73px !important;
+}
+.section9 {
+  background-color:white;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 44%);
+  background-size: cover;
+  height: 30vh;
+  width: 100vw;
+  margin-top: -23px;
+}
+.section10 {
+  background-color:white;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 44%);
+  background-size: cover;
+  height: 74vh;
+  width: 100vw;
+  margin-top: 23px;
+}
+.resize {
+  border-top: 1px solid black;
+  width: 90vw;
+  height: 7vh;
+  margin-top: 23px;
+}
+  .circle4 {
     background: #fff;
     box-shadow: 0 4px 24px rgb(0 0 0 / 14%);
     border-radius: 16px;
-    height: 60vh;
+    height: 30vh;
     margin: 0 0 30px;
-    width: 100%;
+    width: 90vh;
     max-width: 100%;
     padding: 12px 10px;
   }

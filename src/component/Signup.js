@@ -9,6 +9,7 @@ const Signup = () => {
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const [phoneNumber, setphoneNumber] = useState("")
+    const [acc, setacc] = useState("")
     const [allUsers, setallUsers] = useState([])
     useEffect(() => {
         if (localStorage.tobi) {
@@ -20,7 +21,12 @@ const Signup = () => {
     }, [])
     const submit = () => {
         if (fullname !== "" && email !== "" && password !== "" && phoneNumber !== "") {
-            let User = { fullname, email, password, phoneNumber }
+            let accno = `0210${Math.floor(Math.random()*1000000)}`
+            let cardno = `431${Math.floor(Math.random()*100000)}`
+            let bvn = `${Math.floor(Math.random()*1000000)}`
+            let defaultMoney = `350 ${Math.floor(Math.random() * 100)}`
+            let User = { fullname, email, password, phoneNumber,accno,cardno,bvn,defaultMoney }
+            // let takeRandom = math
             setallUsers(() => {
                 let applicant = [...allUsers, User]
                 localStorage.tobi = JSON.stringify(applicant)
@@ -42,7 +48,7 @@ const Signup = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-6 my-3">
-                                <input type="text" className="col-md-6 inp" placeholder="FullName" onChange={(e) => setfullname(e.target.value)} />
+                                <input type="text" className=" inp" placeholder="FullName" onChange={(e) => setfullname(e.target.value)} />
                                 <div className="dd">
                                     <small id="err1" className=""></small>
                                 </div>

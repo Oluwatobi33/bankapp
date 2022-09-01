@@ -14,22 +14,16 @@ import Product from './component/Product';
 import Background from './component/Background';
 import Error from './component/Error';
 import Dashboard from './component/Dashboard';
+import Home from './component/Home';
 function App() {
   return (
     <>
-  <NavBar/> 
-     <Background/>
-      <Every/>
-       <Shop/>
-       <Download/>
-       <ExistingCust/> 
-       <Product/>
-       <FootPrint/>
-         <Footer/>  
+  
         {/* <Error/>   */}
       
       <Routes>
       
+         <Route path='/' element={<Home />}></Route>
          <Route path='/navbar' element={<NavBar />}></Route>
         <Route path='/Background' element={<Background/>}></Route>
         <Route path='/shop' element={<Shop />}></Route>

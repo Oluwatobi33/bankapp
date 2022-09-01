@@ -1,14 +1,13 @@
 import React from 'react'
-import { useState, useEffect } from "react"
-// import { useParams, useNavigate } from 'react-router-dom'
+import { useState} from "react"
 import { Link } from 'react-router-dom'
 import Background from './Background'
-import { Navigate } from 'react-router-dom'
-import l from "../assest/image/l.png"
-import Signup  from './Signup'
-// import { Navigate, useNavigate } from "react-router-dom";
+import img1 from "../assest/image/lo.png"
+// import Signup  from './Signup'
+import { Navigate,useNavigate} from "react-router-dom";
+import Dashboard from './Dashboard'
 const Signin = () => {
-    // const Navigate = useNavigate()
+    const Navigate = useNavigate()
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const [userLogin, setuserLogin] = useState([])
@@ -18,17 +17,18 @@ const Signin = () => {
         if (email !== "" && password !== "") {
             for (const a of emmanuel) {
                 let User = { email, password }
-                if (a["email"] === User.email && a["password"] === User.password) {
+                if (a["email"] === User.email && a["password"] === User.password){
                     localStorage.signinEmail = JSON.stringify(email);
-                    Navigate('')
+                    localStorage.uselogin = JSON.stringify(a)
+                    Navigate('/Dashboard')
                 } else {
-                    let err = "Please confirm you fill input outlet correctly"
-                    setError(err)
+                    // let err = "Please confirm you fill input outlet correctly"
+                    // setError(err)
                 }
             }
         } else {
-            let err = "Please fill all your input outlet"
-            setError(err)
+            // let error = err.innerHTML= "Please fill all your input outlet"
+            // setError(err)
         }
     }
     return (
@@ -41,6 +41,7 @@ const Signin = () => {
                    </div>
                     <div className="col-md-4">
                         <p>Login Page</p>
+                        <p></p>
                         <div className="col-md-6 my-3">
                             <input type="text" className=" inp" placeholder="Email" onChange={(e) => setemail(e.target.value)} />
                             <div className="dd">
@@ -57,7 +58,7 @@ const Signin = () => {
                         <small className='text-secondary'>Don't have an account yet?<Link to='./Signup'><span>Signup</span></Link></small>
                     </div>
                     <div className="col-md-4">
-                        <img src={l} className='img-responsive img-fluid w-100'/>
+                        <img src={img1} className='img-responsive img-fluid w-100'/>
                     </div>
                     
                 </div>

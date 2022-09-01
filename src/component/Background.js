@@ -6,7 +6,7 @@ const Background = () => {
             <section className="Section3">
                 <div className="container py-5">
                     <div className="row justify-content-start">
-                        <div className="col-md-5">
+                        <div className="col-md-5 ">
                             <h1 className="text-white fw-bold float-start">Quickteller</h1>
                             <p className="text-start text-white float-start" style={{fontSize:"12px"}}>Digital hub connecting people to seamless payments, global shopping, flights and more..</p>
                             <p className='text-white'>Email:bakareemmauel2233@gmail.com</p>

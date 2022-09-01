@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
   return (
    <>
-      <nav class="navbar navbar-expand-lg bg-white ">
+    <div class='container' style={{marginLeft:"-22px"}}>
+    <nav class="navbar navbar-expand-lg bg-white ">
         <div class="container-fluid">
           <a class="navbar-brand" style={{ marginLeft: "11vw" }} href="#">
             <img src="https://www.interswitchgroup.com/assets/images/home/interswitch_logo.svg" style={{ width: '100px' }} className='img-responsive img-fluid' />
@@ -58,8 +59,9 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
+    </div>
       <div className="container-fluid" style={{ backgroundColor: '#18425d', height: "8vh", }} >
-        <nav class="navbar py-3" style={{ marginLeft: "11vw" }}>
+        <nav class="navbar py-3" style={{ marginLeft: "3vw" }}>
           <div class="container-fluid">
             <span class="navbar-text">
               <h6 className="text-white">Quickteller</h6>
