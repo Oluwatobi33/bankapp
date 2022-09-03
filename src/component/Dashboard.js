@@ -7,6 +7,7 @@ import third from "../assest/image/third.png"
 import fourth from "../assest/image/fourth.png"
 import check from "../assest/image/check.png"
 import reinter from "../assest/image/reinter.png"
+import NavBar from './NavBar'
 const Dashboard = () => {
     const [Reguser, setReguser] = useState([])
     const [CurrentEmail, setCurrentEmail] = useState([])
@@ -14,17 +15,16 @@ const Dashboard = () => {
     const [customer, setcustomer] = useState({})
     const navigate = useNavigate()
     useEffect(() => {
-        // let dash = JSON.parse(localStorage.getItem("tobi"));
         if (localStorage.tobi && localStorage.signinEmail && localStorage.uselogin) {
             let Reguser = JSON.parse(localStorage.tobi)
             setReguser(JSON.parse(localStorage.tobi))
             setCurrentEmail(JSON.parse(localStorage.signinEmail))
             setcurrenUserDetails(JSON.parse(localStorage.uselogin))
             let email = JSON.parse(localStorage.uselogin).email
+            
             let hass = JSON.parse(localStorage.tobi).find((item,index)=>item.email===email)
             let index = JSON.parse(localStorage.tobi).findIndex((x)=>x.email==email)
-            // console.log(hass);
-            console.log(index);
+            console.log(Reguser[index])
             setcustomer(Reguser[index])
         } else {
             navigate('/signin')
@@ -67,7 +67,6 @@ const Dashboard = () => {
             localStorage.setItem('tobi',JSON.stringify(Reguser))
             window.location.reload()
         }else{
-            
             let  err = "Pls fill the input"
             seterr(err)
         }
@@ -78,6 +77,7 @@ const Dashboard = () => {
         let hass = Reguser.find((item,index)=>item.email===email);
         let index = Reguser.findIndex((x)=>x.email==email)
         let customer = Reguser[index]
+        console.log(customer)
         if (moneyTransfer !== "" && Amount !== "" ) {
             let user = {moneyTransfer,Amount}
             let remain = parseInt(Reguser[index].defaultMoney) - parseInt(Amount);
@@ -93,17 +93,10 @@ const Dashboard = () => {
         }
        
     }
-
-
-
-
-    // console.log(Welcome);
-    // let accountno = dash.accno
-    // let Cardnumber = accno
-    // let bvbNumber = bvn
-    // let cardName = dash.fullname 
+   
     return (
         <>
+        <NavBar/>
             <div className="row justify-content-center">
                 <div className="col-md-3">
                     <div className='wrapper'>
@@ -116,15 +109,18 @@ const Dashboard = () => {
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-    
+                                        <h5 class="modal-title" id="exampleModalLabel">Buy your Airtime</h5>
                                     </div>
                                     <div class="modal-body">
-                                        
+                                    <span style={{color:"red"}}>{err}</span>
+                                        <input type="number" placeholder='Enter your account number' className='form-control my-3' onChange={(e) => setmoneyTransfer(e.target.value)} />
+                                        <input type="number" placeholder='Enter the Ammount' className='form-control' onChange={(e) => setAmount(e.target.value)} />
+                                        <h5 className='text-dark mb-4'>Total Balance</h5>
+                                        <p className='text-dark'>{customer.defaultMoney}</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Buy Airtime</button>
+                                        <button type="button" class="btn btn-primary" onClick={Airtime}>Buy Airtime</button>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +138,7 @@ const Dashboard = () => {
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Money</h5>
                                     </div>
                                     <div class="modal-body">
                                         <span style={{color:"red"}}>{err}</span>
@@ -163,8 +159,8 @@ const Dashboard = () => {
                 <div className="col-md-3">
                     <div className='wrapper'>
                         <img src={second} style={{ width: "80px" }} alt='none' className='img-responsive img-fluid' />
-                        <h6>Bills</h6>
-                        <p>Payment</p>
+                        <h6>AccountNumber:</h6>
+                        <p>{customer.accno}</p>
                     </div>
                 </div>
                 <div className="row justify-content-center">
@@ -199,16 +195,16 @@ const Dashboard = () => {
                     </div>
                     <div className="col-md-3">
                         <div className='wrapper'>
-                            <img src={third} style={{ width: "80px" }} alt='none' className='img-responsive img-fluid' />
-                            <h6>retirement</h6>
-                            <p>Money</p>
+                            <img src={third} style={{ width:"80px" }} alt='none' className='img-responsive img-fluid' />
+                            <h6>Account Name:</h6>
+                            <h3 className='text-dark'>{customer.fullname}</h3>
                         </div>
                     </div>
                     <div className="col-md-3">
                         <div className='wrapper'>
-                            <img src={second} style={{ width: "80px" }} alt='none' className='img-responsive img-fluid' />
-                            <h6>Loan</h6>
-                            <p>Money</p>
+                            <img src={second} style={{ width:"80px" }} alt='none' className='img-responsive img-fluid' />
+                            <h6>BVN-Number</h6>
+                            <p>{customer.bvn}</p>
                         </div>
                     </div>
                 </div>
@@ -218,13 +214,12 @@ const Dashboard = () => {
                     <div className="row">
                         <div className='totalPrice'>
                             <p style={{ color: '#00425f' }}>Balance @ Nov16 2018 20:34</p>
-                            <h4 className='tbalance' style={{ color: '#00425f', height: "23px" }}>{customer.defaultMoney}</h4>
+                            <h4 className='tbalance' style={{ color: '#00425f', height: "23px" }}>₦{customer.defaultMoney}</h4>
                             <div className='resize d-flex'>
-                                <p style={{ color: '#00425f' }}>Verve eCash <img src={check} style={{ width: "20px" }} alt='none' className='img-responsive img-fluid ms-3' /></p>
-                                <p style={{ color: '#00425f' }} className='ms-5'>ACcNo{customer.cardno}</p>
+                                <p style={{ color: '#00425f' }}>VERVE E-Cash <img src={check} style={{ width: "20px" }} alt='none' className='img-responsive img-fluid ms-3' /></p>
+                                <p style={{ color: '#00425f' }} className='ms-5 fs-2 fw-bold'>ACCNO:{customer.cardno}</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -237,7 +232,7 @@ const Dashboard = () => {
                                 <div className='text-white ele' style={{ backgroundColor: "black" }}>Electricty</div>
                             </div>
                             <div className='col-sm-6 col-md-4 pt-3 pt-md-0'>
-                                <div className='text-white ele' style={{ backgroundColor: "yellow" }}>Sport Bet</div>
+                                <div className='text-white ele' style={{ backgroundColor: "black" }}>Sport Bet</div>
                             </div>
                         </div>
                         <div className="row justify-content-center d-flex py-3">
@@ -258,7 +253,7 @@ const Dashboard = () => {
                         </div>
                         <div className="row justify-content-center d-flex py-3">
                             <div className='col-sm-6 col-md-4'>
-                                <div className='text-white ele' style={{ backgroundColor: "yellow" }}>western Union</div>
+                                <div className='text-white ele' style={{ backgroundColor: "blue" }}>western Union</div>
                             </div>
                             <div className='col-sm-6 col-md-4 pt-3 pt-md-0'>
                                 <div className='text-white ele' style={{ backgroundColor: "purple" }}>internet service</div>
@@ -267,13 +262,13 @@ const Dashboard = () => {
                     </div>
                 </div>
             </section>
-            <section className='section11'>
+            <section className='section11 mt-4'>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4 mt-5">
                             <img src={reinter} className='img-responsive img-fluid text-white' />
-                            <p className='text-white'>Quickteller Paypoint Agents always have businesss</p>
-                            <button type='submit' class='btn btn-danger rounded rounded-4'>To become a Paypoint vist<a href='#'>www.qucikteller.com</a></button>
+                            <p className='text-dark fw-bold h3'>Quickteller Paypoint Agents always have  business</p>
+                            <button type='submit' class='btn btn-secondary rounded rounded-4'>To become a Paypoint vist<a className='text-white px-3' href='#'>www.qucikteller.com</a></button>
                         </div>
                     </div>
                 </div>

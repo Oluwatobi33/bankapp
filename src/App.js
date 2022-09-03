@@ -19,10 +19,7 @@ function App() {
   return (
     <>
   
-        {/* <Error/>   */}
-      
       <Routes>
-      
          <Route path='/' element={<Home />}></Route>
          <Route path='/navbar' element={<NavBar />}></Route>
         <Route path='/Background' element={<Background/>}></Route>

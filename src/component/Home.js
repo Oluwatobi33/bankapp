@@ -20,7 +20,7 @@ const Home = () => {
        <ExistingCust/> 
        <Product/>
         <FootPrint/>
-        {/* <Footer/> */}
+        <Footer/>
     
     </>
   )

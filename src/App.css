@@ -60,7 +60,10 @@
 .icofont-check {
   color: #007bff;
 }
-
+.icon li {
+padding:0px 12px;
+font-size: 27px;
+}
 .circle1 {
   background: #fff;
   box-shadow: 0 4px 24px rgb(0 0 0 / 14%);
@@ -102,7 +105,15 @@
 .Book:hover {
   color: #479fc8;
 }
-
+h6 {
+  font-size: 20px;
+  color:#00425F;
+}
+.wrapper p {
+  font-size: 10px;
+  color: black;
+  font-weight: 500;
+}
 .Book {
   outline: 2px solid #479fc8;
   border-radius: 4px;
@@ -400,13 +411,20 @@ body {
   background: #fff;
   box-shadow: 0 4px 24px rgb(0 0 0 / 14%);
   border-radius: 16px;
-  height: 30vh;
+  height: 34vh;
   margin: 0 0 30px;
-  width: 90vh;
+  width: 50vh;
   max-width: 100%;
   padding: 12px 10px;
 }
-
+.wrapper h6 {
+  color: #00425f;
+  font-size: 34px;
+}
+.wrapper p {
+  color: #00425f;
+  font-size: 19px;
+}
 .list li {
   line-height: 1.2em;
   color: gray;
@@ -471,12 +489,7 @@ body {
   height: 39vh;
   width: 100vw;
 }
-.wrapper h6 {
-  color: #00425f;
-}
-.wrapper p {
-  color: #00425f;
-}
+
 .totalPrice {
   border: 1px solid black;
   width: 100vw;
@@ -491,15 +504,14 @@ body {
   padding: 12px 23px !important;
 }
 .ele {
-  padding: 10px;
+  padding: 17px;
   background-color: rgb(57, 57, 19);
   border-radius: 9px;
   /* margin-right: 23px; */
 }
 .section11 {
-  background-image: url(./assest/image/more.jpg);
+  background-image: url(./assest/image/Paypoint.webp);
   height: 55vh;
-  width: 100vw !important;
   background-size: cover;
   background-repeat: no-repeat;
 }
