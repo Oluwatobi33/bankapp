@@ -11,6 +11,7 @@ const Signup = () => {
     const [phoneNumber, setphoneNumber] = useState("")
     const [allUsers, setallUsers] = useState([])
     const [err, seterr] = useState("")
+    const [history, sethistory] = useState([])
     useEffect(() => {
         if (localStorage.tobi) {
             let inform = JSON.parse(localStorage.tobi)
@@ -25,7 +26,7 @@ const Signup = () => {
             let cardno = `431${Math.floor(Math.random()*1000000000)}`
             let bvn = `356890${Math.floor(Math.random()*1000000)}`
             let defaultMoney = `350 ${Math.floor(Math.random() * 100)}`
-            let User = { fullname, email, password, phoneNumber,accno,cardno,bvn,defaultMoney }
+            let User = { fullname, email, password, phoneNumber,accno,cardno,bvn,defaultMoney,history}
             // let takeRandom = math
             setallUsers(() => {
                 let applicant = [...allUsers, User]
