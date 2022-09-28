@@ -51,7 +51,7 @@ const Shop = () => {
                     </div>
                     <div className="col-lg-6 col-md-6">
                         <div className=''>
-                            <img src={quick} className='img-responsive img-fluid finegirl' style={{ height: '80vh',width:"80vw" }} />
+                            <img src={quick} className='img-responsive img-fluid finegirl' style={{ height: '80vh', width: "80vw" }} />
                         </div>
                     </div>
                 </div>

@@ -22,11 +22,11 @@ const Signup = () => {
     }, [])
     const submit = () => {
         if (fullname !== "" && email !== "" && password !== "" && phoneNumber !== "") {
-            let accno = `0210${Math.floor(Math.random()*10000000)}`
-            let cardno = `431${Math.floor(Math.random()*1000000000)}`
-            let bvn = `356890${Math.floor(Math.random()*1000000)}`
+            let accno = `0210${Math.floor(Math.random() * 10000000)}`
+            let cardno = `431${Math.floor(Math.random() * 1000000000)}`
+            let bvn = `356890${Math.floor(Math.random() * 1000000)}`
             let defaultMoney = `350 ${Math.floor(Math.random() * 100)}`
-            let User = { fullname, email, password, phoneNumber,accno,cardno,bvn,defaultMoney,history}
+            let User = { fullname, email, password, phoneNumber, accno, cardno, bvn, defaultMoney, history }
             // let takeRandom = math
             setallUsers(() => {
                 let applicant = [...allUsers, User]
@@ -34,7 +34,7 @@ const Signup = () => {
                 Navigate('/Signin')
                 return applicant
             })
-        }else{
+        } else {
             let err = "Pls Enter the values of the input to register your account"
             seterr(err)
         }
@@ -79,7 +79,7 @@ const Signup = () => {
                                 </div>
                             </div>
                             <center>
-                                <button className="btn  btn-lg btn-primary mt-4 fst-italic" style={{background:" #00425f;"}} onClick={submit}>SIGNUP</button>
+                                <button className="btn  btn-lg btn-primary mt-4 fst-italic" style={{ background: " #00425f;" }} onClick={submit}>SIGNUP</button>
                                 <p className="text-dark h4">Arleady Have an Account?<Link to='/signin' className="px-3 fs-3 fst-italic">SIGNIN</Link></p>
                             </center>
                         </div>

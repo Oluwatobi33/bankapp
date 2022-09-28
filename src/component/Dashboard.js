@@ -21,82 +21,82 @@ const Dashboard = () => {
             setCurrentEmail(JSON.parse(localStorage.signinEmail))
             setcurrenUserDetails(JSON.parse(localStorage.uselogin))
             let email = JSON.parse(localStorage.uselogin).email
-            
-            let hass = JSON.parse(localStorage.tobi).find((item,index)=>item.email===email)
-            let index = JSON.parse(localStorage.tobi).findIndex((x)=>x.email==email)
+
+            let hass = JSON.parse(localStorage.tobi).find((item, index) => item.email === email)
+            let index = JSON.parse(localStorage.tobi).findIndex((x) => x.email == email)
             console.log(Reguser[index])
             setcustomer(Reguser[index])
         } else {
             navigate('/signin')
         }
-    }, [])
+    }, [Reguser])
     const [moneyTransfer, setmoneyTransfer] = useState("")
     const [Amount, setAmount] = useState("")
     const [err, seterr] = useState("")
-    const Amoney = ()=>{
+    const Amoney = () => {
         let email = currenUserDetails.email;
-        let hass = Reguser.find((item,index)=>item.email===email);
-        let index = Reguser.findIndex((x)=>x.email==email)
+        let hass = Reguser.find((item, index) => item.email === email);
+        let index = Reguser.findIndex((x) => x.email == email)
         let customer = Reguser[index]
-        if (moneyTransfer !== "" && Amount !== "" ) {
-            let user = {moneyTransfer,Amount}
+        if (moneyTransfer !== "" && Amount !== "") {
+            let user = { moneyTransfer, Amount }
             let remain = parseInt(Reguser[index].defaultMoney) + parseInt(Amount);
             setReguser(
                 Reguser[index].defaultMoney = remain
             )
-            localStorage.setItem('tobi',JSON.stringify(Reguser))
-            window.location.reload()
-        }else{
-            
-            let  err = "Pls fill the input"
+            localStorage.setItem('tobi', JSON.stringify(Reguser))
+            // window.location.reload()
+        } else {
+
+            let err = "Pls fill the input"
             seterr(err)
         }
-       
+
     }
-    const Transfer = ()=>{
+    const Transfer = () => {
         let email = currenUserDetails.email;
-        let hass = Reguser.find((item,index)=>item.email===email);
-        let index = Reguser.findIndex((x)=>x.email==email)
+        let hass = Reguser.find((item, index) => item.email === email);
+        let index = Reguser.findIndex((x) => x.email == email)
         let customer = Reguser[index]
-        if (moneyTransfer !== "" && Amount !== "" ) {
-            let user = {moneyTransfer,Amount}
+        if (moneyTransfer !== "" && Amount !== "") {
+            let user = { moneyTransfer, Amount }
             let remain = parseInt(Reguser[index].defaultMoney) - parseInt(Amount);
             setReguser(
                 Reguser[index].defaultMoney = remain
             )
-            localStorage.setItem('tobi',JSON.stringify(Reguser))
-            window.location.reload()
-        }else{
-            let  err = "Pls fill the input"
+            localStorage.setItem('tobi', JSON.stringify(Reguser))
+            // window.location.reload()
+        } else {
+            let err = "Pls fill the input"
             seterr(err)
         }
-       
+
     }
-    const Airtime = ()=>{
+    const Airtime = () => {
         let email = currenUserDetails.email;
-        let hass = Reguser.find((item,index)=>item.email===email);
-        let index = Reguser.findIndex((x)=>x.email==email)
+        let hass = Reguser.find((item, index) => item.email === email);
+        let index = Reguser.findIndex((x) => x.email == email)
         let customer = Reguser[index]
         console.log(customer)
-        if (moneyTransfer !== "" && Amount !== "" ) {
-            let user = {moneyTransfer,Amount}
+        if (moneyTransfer !== "" && Amount !== "") {
+            let user = { moneyTransfer, Amount }
             let remain = parseInt(Reguser[index].defaultMoney) - parseInt(Amount);
             setReguser(
                 Reguser[index].defaultMoney = remain
             )
-            localStorage.setItem('tobi',JSON.stringify(Reguser))
+            localStorage.setItem('tobi', JSON.stringify(Reguser))
             window.location.reload()
-        }else{
-            
-            let  err = "Pls fill the input"
+        } else {
+
+            let err = "Pls fill the input"
             seterr(err)
         }
-       
+
     }
-   
+
     return (
         <>
-        <NavBar/>
+            <NavBar />
             <div className="row justify-content-center">
                 <div className="col-md-3">
                     <div className='wrapper'>
@@ -105,14 +105,14 @@ const Dashboard = () => {
                             <h6>Buy</h6>
                             <p>Airtime</p>
                         </button>
-                        <div class="modal fade" id="exampleModal"   data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Buy your Airtime</h5>
                                     </div>
                                     <div class="modal-body">
-                                    <span style={{color:"red"}}>{err}</span>
+                                        <span style={{ color: "red" }}>{err}</span>
                                         <input type="number" placeholder='Enter your account number' className='form-control my-3' onChange={(e) => setmoneyTransfer(e.target.value)} />
                                         <input type="number" placeholder='Enter the Ammount' className='form-control' onChange={(e) => setAmount(e.target.value)} />
                                         <h5 className='text-dark mb-4'>Total Balance</h5>
@@ -129,26 +129,26 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-3">
                     <div className='wrapper'>
-                        <button type="button" class="btn" data-bs-toggle="modal"  data-bs-target="#Add" style={{ border: "none" }}>
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#Add" style={{ border: "none" }}>
                             <img src={third} style={{ width: "80px" }} alt='none' className='img-responsive img-fluid' />
                             <h6>Add</h6>
                             <p>Money</p>
                         </button>
-                        <div class="modal fade" id="Add"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="Add" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Add Money</h5>
                                     </div>
                                     <div class="modal-body">
-                                        <span style={{color:"red"}}>{err}</span>
+                                        <span style={{ color: "red" }}>{err}</span>
                                         <input type="number" placeholder='Enter your account number' className='form-control my-3' onChange={(e) => setmoneyTransfer(e.target.value)} />
                                         <input type="number" placeholder='Enter the Ammount' className='form-control' onChange={(e) => setAmount(e.target.value)} />
                                         <h5 className='text-dark'>Total Balance</h5>
                                         <p>{customer.defaultMoney}</p>
                                     </div>
                                     <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         <button type="button" class="btn btn-primary" onClick={Amoney}>Add Money</button>
                                     </div>
                                 </div>
@@ -171,18 +171,18 @@ const Dashboard = () => {
                                 <h6>Transfer</h6>
                                 <p>Money</p>
                             </button>
-                            <div class="modal fade" id="transfer"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="transfer" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Transfer Section</h5>  
+                                            <h5 class="modal-title" id="exampleModalLabel">Transfer Section</h5>
                                         </div>
                                         <div class="modal-body">
-                                        <span style={{color:"red"}}>{err}</span>
-                                        <input type="number" placeholder='Enter your account number' className='form-control my-3' onChange={(e) => setmoneyTransfer(e.target.value)} />
-                                        <input type="number" placeholder='Enter the Ammount' className='form-control' onChange={(e) => setAmount(e.target.value)} />
-                                        <h5 className='text-dark'>Total Balance</h5>
-                                        <p>{customer.defaultMoney}</p>
+                                            <span style={{ color: "red" }}>{err}</span>
+                                            <input type="number" placeholder='Enter your account number' className='form-control my-3' onChange={(e) => setmoneyTransfer(e.target.value)} />
+                                            <input type="number" placeholder='Enter the Ammount' className='form-control' onChange={(e) => setAmount(e.target.value)} />
+                                            <h5 className='text-dark'>Total Balance</h5>
+                                            <p>{customer.defaultMoney}</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -195,14 +195,14 @@ const Dashboard = () => {
                     </div>
                     <div className="col-md-3">
                         <div className='wrapper'>
-                            <img src={third} style={{ width:"80px" }} alt='none' className='img-responsive img-fluid' />
+                            <img src={third} style={{ width: "80px" }} alt='none' className='img-responsive img-fluid' />
                             <h6>Account Name:</h6>
                             <h3 className='text-dark'>{customer.fullname}</h3>
                         </div>
                     </div>
                     <div className="col-md-3">
                         <div className='wrapper'>
-                            <img src={second} style={{ width:"80px" }} alt='none' className='img-responsive img-fluid' />
+                            <img src={second} style={{ width: "80px" }} alt='none' className='img-responsive img-fluid' />
                             <h6>BVN-Number</h6>
                             <p>{customer.bvn}</p>
                         </div>
