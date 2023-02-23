@@ -84,7 +84,7 @@ const Signup = () => {
                             </center>
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-md-6">
                         <img src={register} className='img-responsive img-fluid w-100' />
                     </div>
                 </div>
